@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-27T12:00:00+02:00",
+  "title": "Design System: Les Produits de la Vie — Vincennes",
+  "extensions": {
+    "colorMeta": {
+      "kraft": { "role": "neutral", "displayName": "Kraft brut", "canonical": "#c7a06f", "tonalRamp": ["#3b2a14", "#5a4122", "#7a5a33", "#9c7746", "#c7a06f", "#d6b88f", "#e6d2b4", "#f4ead9"] },
+      "ink": { "role": "primary", "displayName": "Bleu flexo", "canonical": "#172870", "tonalRamp": ["#070c24", "#0e1a52", "#172870", "#2a3d8f", "#4658ad", "#7482c8", "#a8b1e0", "#dfe3f5"] },
+      "ink-deep": { "role": "primary", "displayName": "Bleu flexo foncé", "canonical": "#0e1a52", "tonalRamp": ["#04081c", "#0a1238", "#0e1a52", "#1c2b73", "#34469a", "#5c6ebd", "#95a1dc", "#d6dbf2"] },
+      "label-paper": { "role": "neutral", "displayName": "Papier d'étiquette", "canonical": "#f4f4f0", "tonalRamp": ["#2a2a27", "#4b4b47", "#6f6f6a", "#95958f", "#bcbcb6", "#dadad4", "#ebebe6", "#f4f4f0"] },
+      "label-print": { "role": "neutral", "displayName": "Impression thermique", "canonical": "#141414", "tonalRamp": ["#0a0a0a", "#141414", "#2b2b2b", "#474747", "#666666", "#8a8a8a", "#b3b3b3", "#dedede"] },
+      "label-print-soft": { "role": "neutral", "displayName": "Impression atténuée", "canonical": "#4b4b47", "tonalRamp": ["#1c1c1a", "#33332f", "#4b4b47", "#65655f", "#81817a", "#a1a19a", "#c4c4be", "#e6e6e1"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Capitales d'imprimerie", "purpose": "Titres de page et du premier écran (≤ 6rem)." },
+      "headline": { "displayName": "Titre de section", "purpose": "Sections, rayons, étapes du trajet, questions de clôture." },
+      "subhead": { "displayName": "Sous-titre imprimé", "purpose": "Rayons, étapes du trajet, principes, adresse, état tamponné." },
+      "lead": { "displayName": "Chapeau", "purpose": "Chapeau du premier écran et paragraphe d'entrée." },
+      "title": { "displayName": "Titre d'étiquette", "purpose": "Noms de produits sur étiquette." },
+      "data-sm": { "displayName": "Petites données", "purpose": "En-têtes d'étiquette, mentions, légendes." },
+      "body": { "displayName": "Texte", "purpose": "Texte courant, 52–68 caractères par ligne." },
+      "label": { "displayName": "Capitales espacées", "purpose": "Boutons, navigation, intitulés de champs." },
+      "data": { "displayName": "Données de balance", "purpose": "Horaires, dates, formats, compteurs — uniquement sur étiquette ou en donnée." }
+    },
+    "shadows": [
+      { "name": "label-rest", "value": "0 1px 1px rgb(60 40 15 / 0.18), 0 10px 22px -12px rgb(60 40 15 / 0.55)", "purpose": "Étiquette posée sur le kraft." },
+      { "name": "label-lift", "value": "0 2px 2px rgb(60 40 15 / 0.18), 0 22px 32px -14px rgb(60 40 15 / 0.6)", "purpose": "Survol d'une étiquette produit (avec -4px et -0.6deg)." }
+    ],
+    "motion": [
+      { "name": "ease-out", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Toutes les transitions d'état." },
+      { "name": "label-feed", "value": "1.1s steps(9, end) 0.25s", "purpose": "L'étiquette du jour s'imprime ligne par ligne, une fois (clip-path)." },
+      { "name": "stamp-land", "value": "0.42s cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Un tampon tombe (scale 1.35 → 1) une fois à l'entrée dans l'écran." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" },
+      { "name": "xl", "value": "1280px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Bouton plein",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Action principale : bloc d'encre rectangulaire, flèche qui avance au survol.",
+      "html": "<a class=\"ds-btn-ink\" href=\"#\"><span>Nous trouver</span><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></a>",
+      "css": ".ds-btn-ink{display:inline-flex;align-items:center;gap:12px;min-height:52px;padding:0 24px;background:#172870;color:#c7a06f;font:700 0.95rem/1 Archivo,system-ui,sans-serif;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;transition:background-color .2s}.ds-btn-ink svg{transition:transform .3s cubic-bezier(.16,1,.3,1)}.ds-btn-ink:hover{background:#0e1a52}.ds-btn-ink:hover svg{transform:translateX(4px)}.ds-btn-ink:active{transform:translateY(1px)}.ds-btn-ink:focus-visible{outline:2.5px solid #172870;outline-offset:3px}"
+    },
+    {
+      "name": "Bouton filet",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Action secondaire : filet d'encre de 2px, se remplit au survol.",
+      "html": "<a class=\"ds-btn-outline\" href=\"#\">Découvrir la boutique</a>",
+      "css": ".ds-btn-outline{display:inline-flex;align-items:center;min-height:52px;padding:0 24px;border:2px solid #172870;color:#172870;font:700 0.95rem/1 Archivo,system-ui,sans-serif;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;transition:background-color .2s,color .2s}.ds-btn-outline:hover{background:#172870;color:#c7a06f}.ds-btn-outline:focus-visible{outline:2.5px solid #172870;outline-offset:3px}"
+    },
+    {
+      "name": "Étiquette de balance",
+      "kind": "custom",
+      "refersTo": "scale-label",
+      "description": "Support de toute donnée vivante : papier thermique, lignes intitulé … valeur, état tamponné.",
+      "html": "<div class=\"ds-label\"><p class=\"ds-label-head\"><span>Les Produits de la Vie</span><span>dim 27/09</span></p><p><span class=\"ds-stamp\">Ouvert</span></p><p class=\"ds-label-soft\">jusqu'à 14h30</p><dl><div class=\"ds-leader\"><dt>Aujourd'hui</dt><dd>10h30 – 14h30</dd></div><div class=\"ds-leader\"><dt>Arrivage</dt><dd>jeu 01/10</dd></div></dl></div>",
+      "css": ".ds-label{max-width:320px;padding:16px;background:#f4f4f0;color:#141414;border-radius:3px;box-shadow:0 1px 1px rgb(60 40 15/.18),0 10px 22px -12px rgb(60 40 15/.55);font:400 .8rem/1.55 'Red Hat Mono',ui-monospace,monospace;transform:rotate(1.2deg)}.ds-label-head{display:flex;justify-content:space-between;padding-bottom:8px;border-bottom:1px dashed rgb(20 20 20/.4);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase}.ds-label-soft{color:#4b4b47;margin:0}.ds-stamp{display:inline-block;margin-top:12px;padding:.2em .55em .1em;border:2.5px solid currentColor;font:800 1.9rem/1 Archivo,sans-serif;font-variation-settings:'wdth' 62;text-transform:uppercase;letter-spacing:.04em;transform:rotate(-2deg)}.ds-label dl{margin:12px 0 0;padding-top:10px;border-top:1px dashed rgb(20 20 20/.4)}.ds-leader{display:flex;align-items:baseline;gap:8px}.ds-leader::after{content:'';order:1;flex:1;border-bottom:1.5px dotted currentColor;opacity:.45;transform:translateY(-.25em)}.ds-leader dd{order:2;margin:0}.ds-leader dt{margin:0}"
+    },
+    {
+      "name": "Ligne de rayon",
+      "kind": "custom",
+      "description": "Liste des rayons à filets épais ; la ligne passe en aplat d'encre au survol.",
+      "html": "<a class=\"ds-row\" href=\"#\"><span class=\"ds-row-name\">Tartinables</span><span>Pour l'apéritif ou la tartine du matin.</span><span class=\"ds-row-count\">2 réf.</span></a>",
+      "css": ".ds-row{display:grid;grid-template-columns:1.1fr 1fr auto;align-items:center;gap:24px;padding:20px 12px;border-top:2px solid #172870;border-bottom:2px solid #172870;color:#172870;text-decoration:none;font:400 1rem/1.4 Archivo,sans-serif;transition:background-color .2s,color .2s}.ds-row-name{font:800 3rem/.9 Archivo,sans-serif;font-variation-settings:'wdth' 62;text-transform:uppercase}.ds-row-count{font:400 .875rem 'Red Hat Mono',monospace}.ds-row:hover,.ds-row:focus-visible{background:#172870;color:#c7a06f;outline:none}"
+    },
+    {
+      "name": "Champ de formulaire",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Papier d'étiquette, filet d'encre ; l'erreur est un filet épaissi, pas une couleur.",
+      "html": "<label class=\"ds-field\"><span>E-mail *</span><input type=\"email\" placeholder=\"\"></label>",
+      "css": ".ds-field{display:block;color:#172870;font:700 .85rem/1 Archivo,sans-serif;letter-spacing:.06em;text-transform:uppercase}.ds-field input{display:block;width:100%;height:52px;margin-top:6px;padding:0 16px;background:#f4f4f0;border:2px solid #172870;border-radius:0;color:#141414;font:400 1rem Archivo,sans-serif;letter-spacing:normal;text-transform:none}.ds-field input:focus-visible{outline:2.5px solid #172870;outline-offset:2px}.ds-field input[aria-invalid=true]{border-width:3.5px}"
+    },
+    {
+      "name": "Onglet de filtre",
+      "kind": "chip",
+      "description": "Filtres du catalogue : rectangle à filet, rempli d'encre quand actif.",
+      "html": "<button class=\"ds-tab\" aria-pressed=\"true\">Tout</button><button class=\"ds-tab\" aria-pressed=\"false\">Pains &amp; viennoiseries <span>4</span></button>",
+      "css": ".ds-tab{min-height:44px;padding:0 14px;margin-right:6px;border:2px solid #172870;background:transparent;color:#172870;font:700 .85rem/1 Archivo,sans-serif;letter-spacing:.05em;text-transform:uppercase;cursor:pointer;transition:background-color .15s}.ds-tab span{font:400 .8em 'Red Hat Mono',monospace}.ds-tab:hover{background:rgb(244 244 240/.5)}.ds-tab[aria-pressed=true]{background:#172870;color:#c7a06f}.ds-tab:focus-visible{outline:2.5px solid #172870;outline-offset:3px}"
+    },
+    {
+      "name": "Bandeau de navigation",
+      "kind": "nav",
+      "description": "Bandeau d'encre du haut, bouche du sac dentelée en bas, bouton kraft.",
+      "html": "<header class=\"ds-nav\"><span class=\"ds-logo\"><b>Les Produits</b><b>de la Vie</b></span><nav><a href=\"#\" aria-current=\"page\">Accueil</a><a href=\"#\">Nos produits</a></nav><a class=\"ds-nav-cta\" href=\"#\">Nous trouver</a></header>",
+      "css": ".ds-nav{position:relative;display:flex;align-items:center;justify-content:space-between;gap:24px;height:72px;padding:0 32px 6px;background:#172870;color:#c7a06f;font:700 .95rem Archivo,sans-serif;letter-spacing:.06em;text-transform:uppercase}.ds-nav::after{content:'';position:absolute;left:0;right:0;bottom:-1px;height:10px;background:linear-gradient(135deg,transparent 50%,#c7a06f 50%) 0 0/14px 10px repeat-x,linear-gradient(225deg,transparent 50%,#c7a06f 50%) 0 0/14px 10px repeat-x}.ds-logo{display:inline-flex;flex-direction:column;padding:4px 8px 2px;border:2px solid currentColor;font:800 1rem/.86 Archivo,sans-serif;font-variation-settings:'wdth' 62}.ds-nav nav{display:flex;gap:32px}.ds-nav nav a{color:inherit;text-decoration:none;text-underline-offset:6px;text-decoration-thickness:2px}.ds-nav nav a:hover,.ds-nav nav a[aria-current=page]{text-decoration-line:underline}.ds-nav-cta{display:inline-flex;align-items:center;height:44px;padding:0 20px;background:#c7a06f;color:#172870;text-decoration:none;font-size:.875rem}.ds-nav-cta:hover{background:#f4f4f0}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Le sac kraft et l'étiquette de balance",
+    "overview": "Le site est traité comme le sac qu'on emporte de la boutique. Le fond est du papier kraft brut, avec ses fibres. Tout ce qui est imprimé dessus l'est d'une seule encre, un bleu flexo profond : les titres en capitales condensées, les filets, les tampons, et les photos d'ambiance tirées en bichromie. Là où l'encre couvre une région entière, le kraft « réservé » réapparaît en clair. Les données vivantes et les produits sont portés par un second objet du même monde : l'étiquette thermique de la balance de boulangerie, blanche, imprimée en noir, en chiffres mono.\n\nLa densité est celle d'un imprimé de commerce : de grands titres qui occupent la largeur, des listes à filets épais plutôt que des cartes, des lignes de données « intitulé … valeur ». Il n'y a ni dégradé, ni flou décoratif, ni arrondi hors des étiquettes. La page s'ouvre comme la bouche du sac, avec un bord dentelé sous le bandeau d'encre, et ce même bord revient partout où le kraft rencontre un aplat.",
+    "keyCharacteristics": [
+      "Un fond (kraft), une encre (bleu flexo), un support de données (étiquette thermique).",
+      "Capitales condensées massives pour toute la hiérarchie haute ; texte courant en grotesque normale.",
+      "L'état d'un élément est une marque imprimée (tampon, mot en capitales, filet épaissi), jamais une couleur d'alerte.",
+      "Bords dentelés aux jonctions kraft / encre ; angles droits partout ailleurs.",
+      "Le mouvement est de l'impression, piloté par le défilement : une photo qui naît entre deux mots, un texte qui s'encre, un compteur de balance qui roule, des étiquettes qu'on pose. Jamais de défilement détourné, de loader ni d'effet de curseur, pour tous les visiteurs."
+    ],
+    "rules": [
+      { "name": "The One Ink Rule", "body": "Tout ce qui est imprimé sur le sac l'est en bleu flexo. Aucune seconde couleur d'accent, aucun vert « ouvert » ni rouge « erreur ».", "section": "colors" },
+      { "name": "The Knockout Rule", "body": "Sur un aplat d'encre, le clair est le kraft lui-même (#c7a06f), jamais une crème plus pâle : c'est le papier qui apparaît, pas une nouvelle couleur.", "section": "colors" },
+      { "name": "The Product-In-Colour Exception", "body": "Les photos de produits restent en couleur, et seulement à l'intérieur d'une étiquette blanche : le produit est l'objet dans le sac, pas un imprimé du sac. Raison : le visiteur principal est un riverain non vegan, que l'appétit fait venir (PRODUCT.md, « Users »). Les photos d'ambiance, elles, sont toujours imprimées en bichromie (`.printed`).", "section": "colors" },
+      { "name": "The Mono-Means-Measured Rule", "body": "La mono n'imprime que des données (heures, dates, formats, compteurs). Jamais un titre, jamais un texte d'ambiance.", "section": "typography" },
+      { "name": "The No-Kicker Rule", "body": "Aucun surtitre au-dessus d'un titre : le titre imprimé porte seul son poids.", "section": "typography" },
+      { "name": "The Paper-Only Depth Rule", "body": "Seul un objet en papier posé sur le kraft (une étiquette) a une ombre. Les boutons, blocs et images sont imprimés, donc plats.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do imprimer chaque nouvelle photo d'ambiance avec `PrintedImage` (bichromie encre / kraft).",
+      "Do placer toute donnée vivante ou chiffrée (horaires, dates, formats, prix futurs) sur une étiquette, en mono.",
+      "Do marquer un état par un tampon, un mot en capitales ou un filet épaissi.",
+      "Do séparer les sections en alternant kraft et aplat d'encre, avec le bord dentelé à la jonction.",
+      "Do garder une seule action pleine par groupe, les autres en filet ou en lien souligné."
+    ],
+    "donts": [
+      "Don't introduire une seconde couleur d'accent, ni une crème plus pâle que le kraft sur les aplats (The Knockout Rule).",
+      "Don't mettre de surtitre au-dessus d'un titre, ni de numéros de section hors d'une vraie séquence (le trajet du champ à la boutique en est une).",
+      "Don't construire une section en grille de cartes « icône + titre + texte », ni en rangée de gros chiffres.",
+      "Don't arrondir, dégrader, flouter ou ombrer ce qui est imprimé : seules les étiquettes ont un rayon et une ombre.",
+      "Don't utiliser la mono pour autre chose que des données.",
+      "Don't terminer chaque page par un bandeau d'appel à l'action : la dernière invitation vit dans le bloc adresse ou en une ligne."
+    ]
+  }
+}

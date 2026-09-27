@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+!.env.example
+
+# Impeccable : captures de revue et brouillons de décision (outillage local)
+.impeccable/review/
+.impeccable/decision/
+.impeccable/live/

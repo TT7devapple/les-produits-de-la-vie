@@ -1,26 +1,305 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ------------------------------------------------------------------
+   Les Produits de la Vie — le sac kraft et l'étiquette de balance.
+   Un fond : le kraft. Une encre : le bleu flexo. Un support de données :
+   l'étiquette thermique blanche.
+   ------------------------------------------------------------------ */
+@theme {
+  --color-kraft: #c7a06f;
+  --color-ink: #172870;
+  --color-ink-deep: #0e1a52;
+  --color-label: #f4f4f0;
+  --color-print: #141414;
+  --color-print-soft: #4b4b47;
+
+  --font-sans: var(--font-archivo), "Arial Narrow", system-ui, sans-serif;
+  --font-mono: var(--font-label), ui-monospace, "Cascadia Mono", monospace;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Échelle typographique : huit paliers, pas un de plus. */
+  --text-display: clamp(3.1rem, 1.9rem + 5vw, 6rem);
+  --text-display--line-height: 0.9;
+  --text-headline: clamp(2.5rem, 1.7rem + 3.4vw, 4.5rem);
+  --text-headline--line-height: 0.9;
+  --text-subhead: clamp(1.9rem, 1.6rem + 1.2vw, 2.6rem);
+  --text-subhead--line-height: 0.95;
+  --text-lead: clamp(1.2rem, 1.05rem + 0.6vw, 1.6rem);
+  --text-lead--line-height: 1.3;
+  --text-title: clamp(1.05rem, 1rem + 0.25vw, 1.2rem);
+  --text-title--line-height: 1.15;
+  --text-ui: 0.9rem;
+  --text-ui--line-height: 1.2;
+  --text-data: 0.85rem;
+  --text-data--line-height: 1.55;
+  --text-data-sm: 0.72rem;
+  --text-data-sm--line-height: 1.45;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Scènes animées : `anim:` si les animations sont autorisées (drapeau posé par le
+   layout), `anim-lg:` en plus sur un écran assez grand pour épingler le hero
+   sans jamais couper son contenu. Sans drapeau, la mise en page reste statique. */
+@custom-variant anim (&:where([data-motion="on"] *));
+@custom-variant anim-lg {
+  @media (min-width: 1024px) and (min-height: 680px) {
+    &:where([data-motion="on"] *) {
+      @slot;
+    }
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-padding-top: 5.5rem;
+    scrollbar-color: var(--color-ink) var(--color-kraft);
+  }
+
+  body {
+    background-color: var(--color-kraft);
+    background-image: url("/textures/kraft.png");
+    background-size: 256px 256px;
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 1.0625rem;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  a {
+    text-underline-offset: 0.2em;
+    text-decoration-thickness: 1.5px;
+  }
+
+  ::selection {
+    background: var(--color-ink);
+    color: var(--color-kraft);
+  }
+
+  :focus-visible {
+    outline: 2.5px solid currentColor;
+    outline-offset: 3px;
+  }
+
+  input,
+  textarea,
+  select {
+    caret-color: var(--color-ink);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+}
+
+@layer components {
+  /* Capitales condensées d'imprimerie : la voix du sac. */
+  .display {
+    font-family: var(--font-sans);
+    font-variation-settings: "wdth" 62;
+    font-weight: 800;
+    text-transform: uppercase;
+    line-height: 0.9;
+    letter-spacing: -0.005em;
+  }
+
+  /* Aplat d'encre : le kraft « réservé » apparaît en clair. */
+  .on-ink {
+    background-color: var(--color-ink);
+    color: var(--color-kraft);
+    scrollbar-color: var(--color-kraft) var(--color-ink);
+  }
+  .on-ink ::selection {
+    background: var(--color-kraft);
+    color: var(--color-ink);
+  }
+
+  /* Bord dentelé du sac, là où le kraft rencontre l'aplat d'encre. */
+  .serrated-top {
+    position: relative;
+  }
+  .serrated-top::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -9px;
+    height: 10px;
+    background:
+      linear-gradient(135deg, transparent 50%, var(--color-ink) 50%) 0 0 / 14px 10px repeat-x,
+      linear-gradient(225deg, transparent 50%, var(--color-ink) 50%) 0 0 / 14px 10px repeat-x;
+  }
+
+  /* Section kraft qui suit un aplat d'encre : ses dents mordent vers le haut
+     (invisibles si la section précédente est déjà en kraft). */
+  .serrated-top-kraft {
+    position: relative;
+  }
+  .serrated-top-kraft::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -9px;
+    height: 10px;
+    background:
+      linear-gradient(135deg, transparent 50%, var(--color-kraft) 50%) 0 0 / 14px 10px repeat-x,
+      linear-gradient(225deg, transparent 50%, var(--color-kraft) 50%) 0 0 / 14px 10px repeat-x;
+  }
+
+  /* Bouche du sac : le bord dentelé du kraft mord dans le bandeau d'encre du haut. */
+  .bag-mouth::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    height: 10px;
+    pointer-events: none;
+    background:
+      linear-gradient(135deg, transparent 50%, var(--color-kraft) 50%) 0 0 / 14px 10px repeat-x,
+      linear-gradient(225deg, transparent 50%, var(--color-kraft) 50%) 0 0 / 14px 10px repeat-x;
+  }
+
+  /* Étiquette thermique de balance. */
+  .label {
+    background-color: var(--color-label);
+    color: var(--color-print);
+    border-radius: 3px;
+    box-shadow:
+      0 1px 1px rgb(60 40 15 / 0.18),
+      0 10px 22px -12px rgb(60 40 15 / 0.55);
+  }
+
+  /* Ligne de données d'étiquette : intitulé … valeur, reliés par des points. */
+  .leader {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+  }
+  .leader::after {
+    content: "";
+    order: 1;
+    flex: 1;
+    min-width: 1rem;
+    border-bottom: 1.5px dotted currentColor;
+    opacity: 0.45;
+    transform: translateY(-0.25em);
+  }
+  .leader > :last-child {
+    order: 2;
+  }
+
+  /* Tampon encreur : l'état d'un élément est une marque, pas une couleur. */
+  .stamp {
+    display: inline-block;
+    border: 2.5px solid currentColor;
+    padding: 0.2em 0.55em 0.1em;
+    font-family: var(--font-sans);
+    font-variation-settings: "wdth" 62;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    line-height: 1;
+    -webkit-mask-image: url("/textures/ink.png");
+    mask-image: url("/textures/ink.png");
+    -webkit-mask-size: 192px;
+    mask-size: 192px;
+  }
+
+  /* Photo imprimée en une couleur sur le kraft (bichromie encre/kraft). */
+  .printed {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background-color: var(--color-kraft);
+  }
+  .printed img {
+    filter: grayscale(1) contrast(1.05) brightness(1.22);
+    mix-blend-mode: multiply;
+  }
+  .printed::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--color-ink);
+    mix-blend-mode: lighten;
+    pointer-events: none;
+  }
+}
+
+/* ------------------------------------------------------------------
+   Mouvement : joué pour tous les visiteurs (choix du client), y compris
+   quand le système demande de réduire les animations.
+   ------------------------------------------------------------------ */
+/* L'étiquette sort de la balance, ligne par ligne. */
+.label-print {
+  animation: label-feed 1.1s steps(9, end) 0.25s both;
+}
+@keyframes label-feed {
+  from {
+    clip-path: inset(0 0 100% 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+/* Le tampon tombe quand il entre à l'écran. */
+.js [data-stamp] {
+  opacity: 0;
+}
+.js [data-stamp].is-stamped {
+  animation: stamp-land 0.42s var(--ease-out) both;
+}
+@keyframes stamp-land {
+  from {
+    opacity: 0;
+    transform: scale(1.35) rotate(var(--stamp-rotate, -4deg));
+  }
+  60% {
+    opacity: 1;
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(var(--stamp-rotate, -4deg));
+  }
+}
+
+[data-stamp] {
+  transform: rotate(var(--stamp-rotate, -4deg));
+}
+
+/* Encrage caractère par caractère : le texte est d'abord à peine imprimé,
+   puis chaque lettre reçoit sa pleine encre au fil du défilement. */
+[data-motion="on"] .ink-char {
+  opacity: 0.2;
+  transition: opacity 0.2s linear;
+}
+[data-motion="on"] .ink-char.on {
+  opacity: 1;
+}
+.hand-oval path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.5px;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+}
+[data-motion="on"] .hand-oval path {
+  opacity: 0;
 }

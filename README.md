@@ -1,36 +1,103 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Les Produits de la Vie — Vincennes
 
-## Getting Started
+Site vitrine de l'épicerie 100 % végétale **Les Produits de la Vie**, 45 avenue de Paris, 94300 Vincennes.
 
-First, run the development server:
+Next.js 16 (App Router) · TypeScript · Tailwind CSS 4 · Lucide. Toutes les pages sont générées statiquement.
+
+## Lancer le projet
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev        # développement → http://localhost:3000
+npm run build      # build de production
+npm run start      # servir le build de production
+npm run lint       # vérification ESLint
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Variables d'environnement : copier `.env.example` en `.env.local` (voir les commentaires du fichier).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Modifier le contenu (sans toucher à l'interface)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Je veux changer…                                  | Fichier                                  |
+| ------------------------------------------------- | ---------------------------------------- |
+| Adresse, téléphone, e-mail, horaires, accès, réseaux | `src/data/store.ts`                   |
+| Produits (noms, textes, formats, prix, coups de cœur) | `src/data/products.ts`               |
+| Familles de produits                              | `src/data/categories.ts`                 |
+| Photos et textes alternatifs                      | `src/data/images.ts` + `src/assets/images/` |
+| Nom de domaine, titre SEO, menu, options          | `src/data/site.ts`                       |
 
-## Learn More
+- **Masquer le téléphone** : `phone: null` dans `store.ts`.
+- **Afficher les prix** : renseigner `price` sur les produits, puis `showPrices: true` dans `site.ts`.
+- **Mettre un produit en avant** sur l'accueil : `featured: true`.
+- **Remplacer une photo** : déposer le fichier dans `src/assets/images/`, changer l'import dans `images.ts`, adapter le `alt`.
+  Next.js génère automatiquement les tailles et les formats AVIF/WebP.
 
-To learn more about Next.js, take a look at the following resources:
+## Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+src/
+├── app/                      Pages (une URL = un dossier)
+│   ├── page.tsx              Accueil
+│   ├── la-boutique/          La boutique
+│   ├── nos-produits/         Catalogue + [slug]/ fiche produit
+│   ├── contact/              Contact / venir (+ actions.ts : envoi du formulaire)
+│   ├── mentions-legales/, confidentialite/
+│   ├── sitemap.ts, robots.ts, manifest.ts, icon.svg, apple-icon.png, opengraph-image.jpg
+│   └── layout.tsx            Polices, SEO global, données structurées GroceryStore
+├── components/
+│   ├── layout/               Header, MobileMenu, Footer, MobileActionBar
+│   ├── home/                 Sections de l'accueil (Hero, FarmToShop, FeaturedProducts)
+│   ├── products/             ProductCard (étiquette), ProductGrid, CategoryIndex, ProductCatalog
+│   ├── store/                ScaleLabel, HoursTable, OpenStatus, MapEmbed
+│   ├── sections/             PageHeader, LocationBlock, CTASection, Gallery, Breadcrumbs, LegalPage
+│   ├── contact/              ContactForm
+│   ├── ui/                   Button, SectionTitle, Logo, Stamp, PrintedImage, Container, StampObserver
+│   └── seo/                  JsonLd
+├── data/                     ← contenu modifiable (voir tableau ci-dessus)
+├── lib/                      hours.ts (ouvert/fermé), products.ts (accès aux données), seo.ts
+└── types/
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Direction visuelle : le sac kraft et l'étiquette de balance
 
-## Deploy on Vercel
+Le site est traité comme le sac qu'on emporte de la boutique (détails dans `DESIGN.md`) :
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **un fond** : le kraft (`#c7a06f` + texture de fibres `public/textures/kraft.png`) ;
+- **une encre** : le bleu flexo (`#172870`), qui imprime tout le texte, les filets, les tampons et les photos
+  d'ambiance (bichromie, classe `.printed`) ; sur les aplats bleus (`.on-ink`), le kraft apparaît en clair ;
+- **l'étiquette thermique** (`.label`) porte les données : statut du jour, horaires, produits (photos en couleur) ;
+- **typographie** : Archivo condensée en capitales (`.display`) pour les titres, Archivo normale pour le texte,
+  Red Hat Mono uniquement pour les données d'étiquette ;
+- **l'état est une marque** (tampon `.stamp`, mot en capitales), jamais une couleur d'alerte.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Animations (inspirées du template « Site Immersif », sélection volontaire)
+
+Moteur maison sans dépendance : `src/lib/scenes.ts` (sections hautes + enfant `position: sticky`,
+une seule boucle rAF, aucun détournement du défilement natif).
+
+- **Hero** (`components/home/Hero.tsx`) : la photo imprimée naît entre « À » et « VINCENNES. » et remplit l'écran,
+  puis le tampon du jeudi tombe. Sur tous les écrans : si le contenu dépasse la fenêtre, il défile d'abord
+  normalement (horaires et boutons lisibles), puis la scène s'épingle.
+- **Encrage** (`FarmToShop`) : le propos s'imprime lettre à lettre, un trait à la main entoure « sans intermédiaire ».
+- **Trajet** (`FarmToShop`) : compteur « 01 → 05 » en odomètre, étapes en relais, ligne de route qui se remplit.
+- **Étiquettes** (`LabelArrival`) : les coups de cœur arrivent en désordre puis se posent (latéralement dans le carrousel mobile).
+- Plus l'étiquette du jour qui « s'imprime » au chargement et les tampons qui tombent une fois.
+
+Écartés exprès : défilement lissé, loader, traînée sous la souris, train de mots, rideau de lames.
+Les animations tournent pour tous les visiteurs (choix du client), même si le système demande de les réduire ;
+seule l'absence de JavaScript ramène la mise en page statique (drapeau `data-motion` posé dans `layout.tsx`).
+
+## Choix techniques
+
+- **Carte à la demande** : un plan du quartier dessiné en SVG ; Google Maps n'est chargé qu'au clic (performance + RGPD).
+- **Statut « Ouvert / Fermé » et prochain arrivage** calculés à l'heure de Paris dans le navigateur, sans casser le rendu statique.
+- **Textures générées par script** (`node scripts/generate-textures.mjs`), quelques Ko, aucune image externe.
+- **Provenance des images** : `node scripts/embed-provenance.mjs` inscrit l'origine de chaque image dans le fichier
+  (à relancer après tout remplacement de photo).
+- **Commande en ligne (préparée)** : types `Product` avec `id`, `price`, `availability` ; accès aux données
+  centralisé dans `src/lib/products.ts` (remplaçable par un CMS ou Shopify) ; drapeau `features.onlineOrdering`.
+
+## Informations à confirmer avant mise en ligne
+
+Voir les commentaires `⚠️` dans `src/data/*.ts` et les encadrés « À compléter » des pages légales.
+Les photos sont temporaires : crédits dans `src/assets/images/CREDITS.md`.
