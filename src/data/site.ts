@@ -7,7 +7,7 @@ export const site = {
    * (ou définir la variable d'environnement NEXT_PUBLIC_SITE_URL).
    * Utilisé pour le sitemap, les URL canoniques et Open Graph.
    */
-  url: (process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.lesproduitsdelavie-vincennes.fr").replace(/\/$/, ""),
+  url: (process.env.NEXT_PUBLIC_SITE_URL?.trim() || "https://www.lesproduitsdelavie-vincennes.fr").replace(/\/$/, ""),
   locale: "fr_FR",
   title: "Les Produits de la Vie — Épicerie végétale à Vincennes",
   description:
