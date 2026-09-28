@@ -75,9 +75,8 @@ Le site est traité comme le sac qu'on emporte de la boutique (détails dans `DE
 Moteur maison sans dépendance : `src/lib/scenes.ts` (sections hautes + enfant `position: sticky`,
 une seule boucle rAF, aucun détournement du défilement natif).
 
-- **Hero** (`components/home/Hero.tsx`) : la photo imprimée naît entre « À » et « VINCENNES. » et remplit l'écran,
-  puis le tampon du jeudi tombe. Sur tous les écrans : si le contenu dépasse la fenêtre, il défile d'abord
-  normalement (horaires et boutons lisibles), puis la scène s'épingle.
+- **Hero** (`components/home/Hero.tsx`) : volontairement statique (retiré à la demande du client) — titre,
+  étiquette du jour, puis la photo en bandeau avec le tampon du jeudi.
 - **Encrage** (`FarmToShop`) : le propos s'imprime lettre à lettre, un trait à la main entoure « sans intermédiaire ».
 - **Trajet** (`FarmToShop`) : compteur « 01 → 05 » en odomètre, étapes en relais, ligne de route qui se remplit.
 - **Étiquettes** (`LabelArrival`) : les coups de cœur arrivent en désordre puis se posent (latéralement dans le carrousel mobile).
