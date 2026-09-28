@@ -122,12 +122,12 @@ export default function BoutiquePage() {
           <Gallery
             className="mt-10"
             items={[
+              { ...images.standCounter, caption: "Au comptoir" },
+              images.mandeletti,
+              { ...images.brandJuices, caption: "Jus de légumes" },
+              images.pestoToast,
               { ...images.rusticLoaf, caption: "Pain paysan" },
-              images.vegetableStall,
-              images.plumJam,
-              images.pestoJar,
               { ...images.beets, caption: "Selon la saison" },
-              images.almondCookies,
             ]}
           />
         </Container>

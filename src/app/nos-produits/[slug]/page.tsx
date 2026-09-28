@@ -85,7 +85,7 @@ export default async function ProductPage({ params }: PageProps<"/nos-produits/[
             <div className="lg:col-span-6">
               <div className="label -rotate-[0.6deg] p-2.5 lg:sticky lg:top-28">
                 <div className="relative aspect-[4/5] overflow-hidden rounded-[2px] bg-print/10">
-                  <Image src={product.image.src} alt={product.image.alt} fill preload placeholder="blur" sizes="(min-width: 1024px) 48vw, 100vw" className="object-cover" />
+                  <Image src={product.image.src} alt={product.image.alt} fill preload placeholder="blur" sizes="(min-width: 1024px) 48vw, 100vw" className="object-cover" style={product.image.position ? { objectPosition: product.image.position } : undefined} />
                 </div>
               </div>
             </div>

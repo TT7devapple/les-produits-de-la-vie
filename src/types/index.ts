@@ -4,6 +4,10 @@ import type { StaticImageData } from "next/image";
 export interface SiteImage {
   src: StaticImageData;
   alt: string;
+  /** Point de cadrage (object-position), ex. "40% 25%". Centre par défaut. */
+  position?: string;
+  /** Vraie photo de la marque : reste en couleur, même dans les planches « imprimées ». */
+  genuine?: boolean;
 }
 
 export type CategorySlug =

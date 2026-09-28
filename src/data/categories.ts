@@ -39,7 +39,7 @@ export const categories: Category[] = [
     tagline: "Biscuits, confitures, petites gourmandises.",
     description:
       "Biscuits, croquants, confitures et gelées, chips de pommes et graines à grignoter.",
-    image: images.jamCookies,
+    image: images.mandeletti,
   },
   {
     slug: "boissons",
@@ -47,7 +47,7 @@ export const categories: Category[] = [
     tagline: "Jus de légumes, sirops, infusions.",
     description:
       "Jus de légumes, sirops de fleurs, tisanes et café : de quoi remplir le placard des boissons.",
-    image: images.carrotJuiceGlasses,
+    image: images.brandJuices,
   },
   {
     slug: "fruits-legumes",

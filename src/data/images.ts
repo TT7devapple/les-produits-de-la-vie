@@ -2,7 +2,8 @@
  * ============================================================
  *  PHOTOS DU SITE
  * ============================================================
- * Toutes les photos actuelles sont des images TEMPORAIRES, libres
+ * Les quatre photos « fournies par le client » sont de vraies photos de
+ * la marque. Toutes les autres sont des images TEMPORAIRES, libres
  * de droits (domaine public / CC0, via Openverse) — voir
  * src/assets/images/CREDITS.md.
  *
@@ -46,6 +47,11 @@ import cafeGrains from "@/assets/images/cafe-grains.jpg";
 import painOlives from "@/assets/images/pain-olives.jpg";
 import tisaneVerres from "@/assets/images/tisane-verres.jpg";
 import betteraves from "@/assets/images/betteraves.jpg";
+// Photos fournies par le client (marque Les Produits de la Vie)
+import jusMarque from "@/assets/images/jus-carotte-betterave-marque.jpg";
+import mandeletti from "@/assets/images/mandeletti-camelia.jpg";
+import comptoirStand from "@/assets/images/comptoir-stand.jpg";
+import pestoTartine from "@/assets/images/pesto-tartine.jpg";
 
 export const images = {
   hero: { src: heroPainOlives, alt: "Pain paysan à la croûte farinée posé sur un linge, à côté de bols d'olives" },
@@ -81,4 +87,19 @@ export const images = {
   oliveBread: { src: painOlives, alt: "Pain paysan tranché, olives vertes et noires" },
   teaGlasses: { src: tisaneVerres, alt: "Verres de tisane aux herbes fraîches" },
   beets: { src: betteraves, alt: "Betteraves rouges et blanches en vrac" },
+
+  // Photos fournies par le client
+  brandJuices: {
+    src: jusMarque,
+    genuine: true,
+    position: "50% 22%",
+    alt: "Bouteilles de jus de carotte et de jus de betterave et carotte Les Produits de la Vie, avec leurs verres, des carottes et des betteraves coupées sur un carrelage bordeaux",
+  },
+  mandeletti: { src: mandeletti, genuine: true, position: "50% 55%", alt: "Une main tient un sachet de biscuits Mandeletti devant un camélia en fleur" },
+  standCounter: {
+    src: comptoirStand,
+    genuine: true,
+    alt: "Au comptoir d'un stand de la marque, une vendeuse en tablier bordeaux face à des clients, devant des étagères de bocaux Sapori et Ail des ours",
+  },
+  pestoToast: { src: pestoTartine, genuine: true, alt: "Tranche de pain paysan généreusement tartinée d'un pesto vert" },
 } as const;

@@ -22,7 +22,7 @@ export function PrintedImage({
 }) {
   return (
     <div className={cn("printed", className)}>
-      <Image src={image.src} alt={decorative ? "" : image.alt} fill sizes={sizes} preload={preload} className="object-cover" />
+      <Image src={image.src} alt={decorative ? "" : image.alt} fill sizes={sizes} preload={preload} className="object-cover" style={image.position ? { objectPosition: image.position } : undefined} />
     </div>
   );
 }

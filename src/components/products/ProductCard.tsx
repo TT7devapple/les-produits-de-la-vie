@@ -32,7 +32,7 @@ export function ProductCard({
       )}
     >
       <div className="relative aspect-[4/3] overflow-hidden rounded-[2px] bg-print/10">
-        <Image src={product.image.src} alt={product.image.alt} fill sizes={sizes} placeholder="blur" className="object-cover" />
+        <Image src={product.image.src} alt={product.image.alt} fill sizes={sizes} placeholder="blur" className="object-cover" style={product.image.position ? { objectPosition: product.image.position } : undefined} />
       </div>
 
       <p className="mt-3 flex items-center justify-between gap-2 font-mono text-data-sm tracking-[0.06em] text-print-soft uppercase">

@@ -39,3 +39,15 @@ Deux images ont été recadrées pour retirer des emballages de marque visibles 
 | pain-olives.jpg | Homemade Bread | Foodie Girl | [stocksnap](https://stocksnap.io/photo/homemade-bread-WELQ7DLMJQ) | CC0 |
 | tisane-verres.jpg | Free herbal tea mint leaves | — | [rawpixel](https://www.rawpixel.com/image/5907554/image-public-domain-leaves-free) | CC0 |
 | betteraves.jpg | Beetroot vegetable | — | [rawpixel](https://www.rawpixel.com/image/6016688/beetroot-vegetable-free-public-domain-cc0-photo) | CC0 |
+
+## Photos fournies par le client
+
+Vraies photos de la marque Les Produits de la Vie, transmises par le client (septembre 2026) et converties en JPEG (bordure grise retirée sur mandeletti-camelia.jpg).
+Droits d'utilisation : à confirmer par écrit auprès de la marque avant la mise en ligne définitive.
+
+| Fichier | Sujet | Utilisation |
+| --- | --- | --- |
+| jus-carotte-betterave-marque.jpg | Jus de carotte et jus de betterave et carotte de la marque | Galerie « La boutique », produit « Jus de carotte », rayon Jus |
+| mandeletti-camelia.jpg | Sachet de Mandeletti devant un camélia | Galerie « La boutique », rayon Douceurs |
+| comptoir-stand.jpg | Comptoir d'un stand de la marque | Galerie « La boutique » |
+| pesto-tartine.jpg | Tartine de pain paysan au pesto | Galerie « La boutique », produit « Pesto basilic et citron » |

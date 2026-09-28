@@ -116,7 +116,7 @@ export const products: Product[] = [
     organic: true,
     availability: "unknown",
     featured: true,
-    image: images.pestoJar,
+    image: images.pestoToast,
   },
   {
     id: "sapori",
@@ -253,7 +253,7 @@ export const products: Product[] = [
     organic: true,
     availability: "unknown",
     featured: true,
-    image: images.carrotJuice,
+    image: images.brandJuices,
   },
   {
     id: "jus-betterave-rouge",
