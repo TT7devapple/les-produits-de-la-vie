@@ -97,6 +97,11 @@ export function Footer() {
               </Link>
             </li>
             <li>
+              <Link href="/conditions-de-vente" className={linkClass}>
+                Conditions de vente
+              </Link>
+            </li>
+            <li>
               <a href={store.brandWebsite} target="_blank" rel="noopener noreferrer" className={`inline-flex items-center gap-1 ${linkClass}`}>
                 Site de la marque <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
               </a>

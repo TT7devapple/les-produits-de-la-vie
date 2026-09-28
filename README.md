@@ -94,8 +94,30 @@ seule l'absence de JavaScript ramène la mise en page statique (drapeau `data-mo
 - **Textures générées par script** (`node scripts/generate-textures.mjs`), quelques Ko, aucune image externe.
 - **Provenance des images** : `node scripts/embed-provenance.mjs` inscrit l'origine de chaque image dans le fichier
   (à relancer après tout remplacement de photo).
-- **Commande en ligne (préparée)** : types `Product` avec `id`, `price`, `availability` ; accès aux données
-  centralisé dans `src/lib/products.ts` (remplaçable par un CMS ou Shopify) ; drapeau `features.onlineOrdering`.
+## Commander en ligne (onglet « Commander »)
+
+Toute la gamme de la boutique en ligne de la marque, aux mêmes prix, avec retrait au 45 avenue de Paris.
+
+- **Catalogue** : `npm run sync:shop` relit la boutique de la marque (API publique Shopware) et régénère
+  `src/data/shop-catalog.json`, `src/data/shop-index.json` et les photos `public/shop/`. À relancer quand les prix
+  ou la gamme changent, puis commit + push (Vercel redéploie tout seul).
+- **Panier** : enregistré dans le navigateur (aucun compte client). Le serveur recalcule toujours les prix : un
+  panier modifié à la main ne peut pas changer le montant.
+- **Paiement et transmission des commandes** : réglés par variables d'environnement (Vercel → Settings →
+  Environment Variables, puis redéployer). Voir `.env.example`.
+
+| Variable | Effet |
+| --- | --- |
+| `STRIPE_SECRET_KEY` | Active « Payer maintenant en ligne » (carte, Apple Pay, Google Pay) via Stripe Checkout. Clé du compte Stripe **du commerçant** (`sk_live_…`, ou `sk_test_…` pour essayer). Les commandes payées apparaissent dans le tableau de bord Stripe. |
+| `RESEND_API_KEY`, `ORDER_EMAIL_TO`, `ORDER_EMAIL_FROM` | Active « Payer au retrait » : la commande est envoyée par e-mail à la boutique, et un récapitulatif au client. |
+| `ORDER_WEBHOOK_URL` | Alternative ou complément : chaque commande « retrait » est postée en JSON (Zapier, Make, Google Sheets…). |
+
+Sans aucune de ces variables, le panier fonctionne mais le formulaire indique honnêtement que la commande en
+ligne n'est pas encore ouverte et propose d'appeler la boutique.
+
+**Pour ouvrir la vente** : le commerçant crée un compte sur stripe.com (SIRET + IBAN), copie la clé secrète
+dans `STRIPE_SECRET_KEY` sur Vercel, remplit les encadrés « À compléter » de `/conditions-de-vente` et de
+`/confidentialite`, puis redéploie.
 
 ## Informations à confirmer avant mise en ligne
 

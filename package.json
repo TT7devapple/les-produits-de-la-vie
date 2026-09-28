@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "sync:shop": "node scripts/sync-shop.mjs"
   },
   "dependencies": {
     "lucide-react": "^1.48.0",

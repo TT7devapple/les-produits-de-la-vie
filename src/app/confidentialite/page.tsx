@@ -20,6 +20,8 @@ export default function PrivacyPage() {
           <li>Ce site ne dépose aucun cookie publicitaire ni de mesure d&apos;audience.</li>
           <li>La carte Google Maps n&apos;est chargée que si vous cliquez sur « Afficher la carte ».</li>
           <li>Les informations du formulaire de contact servent uniquement à vous répondre.</li>
+          <li>Les informations d&apos;une commande servent uniquement à la préparer et à vous la remettre.</li>
+          <li>Le panier est enregistré dans votre navigateur (stockage local), pas sur nos serveurs.</li>
         </ul>
       </section>
 
@@ -39,6 +41,27 @@ export default function PrivacyPage() {
         </p>
         <p>
           Prestataire d&apos;envoi du formulaire : <ToFill>nom du service utilisé (ex. Formspree) et lien vers sa politique</ToFill>
+        </p>
+      </section>
+
+      <section>
+        <h2>Commandes en ligne</h2>
+        <p>
+          Lorsque vous passez commande, nous recevons votre nom, votre adresse e-mail, le jour de retrait choisi, le contenu de la commande et, si
+          vous les indiquez, votre téléphone et votre message. Ces données servent à préparer la commande, à vous la remettre et à vous envoyer un
+          récapitulatif (base légale : l&apos;exécution du contrat de vente). Les pièces comptables sont conservées 10 ans, comme la loi
+          l&apos;impose ; le reste, au maximum 3 ans après la commande.
+        </p>
+        <p>
+          <strong>Paiement en ligne</strong> : il est traité par Stripe, sur sa page sécurisée. Nous ne voyons ni ne conservons jamais vos
+          coordonnées bancaires. Voir la{" "}
+          <a href="https://stripe.com/fr/privacy" target="_blank" rel="noopener noreferrer">
+            politique de confidentialité de Stripe
+          </a>
+          .
+        </p>
+        <p>
+          Prestataire d&apos;envoi des e-mails de commande : <ToFill>nom du service utilisé (ex. Resend) et lien vers sa politique</ToFill>
         </p>
       </section>
 

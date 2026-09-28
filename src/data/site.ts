@@ -17,16 +17,18 @@ export const site = {
     { href: "/", label: "Accueil" },
     { href: "/la-boutique", label: "La boutique" },
     { href: "/nos-produits", label: "Nos produits" },
+    { href: "/commander", label: "Commander" },
     { href: "/contact", label: "Contact" },
   ],
 
   /**
-   * Fonctionnalités à activer plus tard.
-   * `onlineOrdering` : prévu pour la future commande en ligne
-   * (panier, click & collect). Laisser à false tant que rien n'est branché.
+   * Fonctionnalités.
+   * `onlineOrdering` : onglet « Commander » (panier, retrait en boutique, paiement
+   * Stripe ou au retrait selon les variables d'environnement — voir .env.example).
+   * `showPrices` : prix sur le catalogue éditorial « Nos produits » (non confirmés en boutique).
    */
   features: {
-    onlineOrdering: false,
+    onlineOrdering: true,
     showPrices: false,
   },
 } as const;

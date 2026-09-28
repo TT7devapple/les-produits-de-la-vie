@@ -7,6 +7,7 @@ import { Menu, X } from "lucide-react";
 import { site } from "@/data/site";
 import { Logo } from "@/components/ui/Logo";
 import { MobileMenu } from "./MobileMenu";
+import { CartButton } from "@/components/shop/CartButton";
 import { cn } from "@/lib/utils";
 
 // Pages avec une barre collante sous l'en-tête : l'en-tête y reste toujours visible.
@@ -87,7 +88,8 @@ export function Header() {
             </ul>
           </nav>
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1 sm:gap-2">
+            <CartButton onNavigate={() => setMenuOpen(false)} />
             <Link
               href="/contact#venir"
               className="hidden h-11 items-center bg-kraft px-5 text-sm font-bold tracking-[0.06em] text-ink uppercase transition-colors hover:bg-label sm:inline-flex"
