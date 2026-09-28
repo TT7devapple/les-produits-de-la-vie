@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { images } from "@/data/images";
 import { store } from "@/data/store";
@@ -19,14 +18,7 @@ export function Hero() {
             <div className="lg:col-span-8">
               <h1 id="hero-titre" className="display text-display">
                 <span className="block">Le goût des bonnes choses,</span>
-                <span className="inline-flex items-center whitespace-nowrap">
-                  À
-                  {/* Vignette imprimée entre les deux mots. */}
-                  <span aria-hidden="true" className="printed relative mx-[0.14em] inline-block h-[0.74em] w-[1.25em] rounded-[2px]">
-                    <Image src={images.hero.src} alt="" fill sizes="120px" className="object-cover" />
-                  </span>
-                  Vincennes.
-                </span>
+                <span className="block">À Vincennes.</span>
               </h1>
               <p className="mt-6 max-w-xl text-lead leading-snug">
                 La boutique d&apos;une ferme bavaroise, au pied du métro {store.access[0].station}. Pain paysan, épicerie, douceurs&nbsp;: tout
