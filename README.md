@@ -63,8 +63,8 @@ src/
 Le site est traité comme le sac qu'on emporte de la boutique (détails dans `DESIGN.md`) :
 
 - **un fond** : le kraft (`#c7a06f` + texture de fibres `public/textures/kraft.png`) ;
-- **une encre** : le bleu flexo (`#172870`), qui imprime tout le texte, les filets, les tampons et les photos
-  d'ambiance (bichromie, classe `.printed`) ; sur les aplats bleus (`.on-ink`), le kraft apparaît en clair ;
+- **une encre** : le bordeaux (`#6e1a2f`), qui imprime tout le texte, les filets, les tampons et les photos
+  d'ambiance (bichromie, classe `.printed`) ; sur les aplats bordeaux (`.on-ink`), le kraft apparaît en clair ;
 - **l'étiquette thermique** (`.label`) porte les données : statut du jour, horaires, produits (photos en couleur) ;
 - **typographie** : Archivo condensée en capitales (`.display`) pour les titres, Archivo normale pour le texte,
   Red Hat Mono uniquement pour les données d'étiquette ;

@@ -3,8 +3,8 @@ name: Les Produits de la Vie — Vincennes
 description: La boutique d'une ferme, imprimée comme le sac kraft qu'on emporte.
 colors:
   kraft: "#c7a06f"
-  ink: "#172870"
-  ink-deep: "#0e1a52"
+  ink: "#6e1a2f"
+  ink-deep: "#4d1120"
   label-paper: "#f4f4f0"
   label-print: "#141414"
   label-print-soft: "#4b4b47"
@@ -106,14 +106,14 @@ components:
 
 **Creative North Star: "Le sac kraft et l'étiquette de balance"**
 
-Le site est traité comme le sac qu'on emporte de la boutique. Le fond est du papier kraft brut, avec ses fibres. Tout ce qui est imprimé dessus l'est d'une seule encre, un bleu flexo profond : les titres en capitales condensées, les filets, les tampons, et les photos d'ambiance tirées en bichromie. Là où l'encre couvre une région entière, le kraft « réservé » réapparaît en clair. Les données vivantes et les produits sont portés par un second objet du même monde : l'étiquette thermique de la balance de boulangerie, blanche, imprimée en noir, en chiffres mono.
+Le site est traité comme le sac qu'on emporte de la boutique. Le fond est du papier kraft brut, avec ses fibres. Tout ce qui est imprimé dessus l'est d'une seule encre, un rouge bordeaux profond : les titres en capitales condensées, les filets, les tampons, et les photos d'ambiance tirées en bichromie. Là où l'encre couvre une région entière, le kraft « réservé » réapparaît en clair. Les données vivantes et les produits sont portés par un second objet du même monde : l'étiquette thermique de la balance de boulangerie, blanche, imprimée en noir, en chiffres mono.
 
 La densité est celle d'un imprimé de commerce : de grands titres qui occupent la largeur, des listes à filets épais plutôt que des cartes, des lignes de données « intitulé … valeur ». Il n'y a ni dégradé, ni flou décoratif, ni arrondi hors des étiquettes. La page s'ouvre comme la bouche du sac, avec un bord dentelé sous le bandeau d'encre, et ce même bord revient partout où le kraft rencontre un aplat.
 
 Rejet confirmé : le trio « fond crème, serif à fort contraste avec italiques, accent terracotta » de l'épicerie fine générique (palette du premier brief déclarée non contraignante par le client).
 
 **Key Characteristics:**
-- Un fond (kraft), une encre (bleu flexo), un support de données (étiquette thermique).
+- Un fond (kraft), une encre (bordeaux), un support de données (étiquette thermique).
 - Capitales condensées massives pour toute la hiérarchie haute ; texte courant en grotesque normale.
 - L'état d'un élément est une marque imprimée (tampon, mot en capitales, filet épaissi), jamais une couleur d'alerte.
 - Bords dentelés aux jonctions kraft / encre ; angles droits partout ailleurs.
@@ -124,8 +124,8 @@ Rejet confirmé : le trio « fond crème, serif à fort contraste avec italiques
 Deux couleurs de surface qui se partagent la page par régions entières, plus le blanc des étiquettes.
 
 ### Primary
-- **Bleu flexo** (#172870) : l'unique encre. Tout le texte sur kraft, les filets, les boutons pleins, les tampons, les aplats de section (provenance, adresse, bandeau du haut, menu mobile, barre d'actions mobile) et le ton sombre des photos imprimées. Contraste 5,5:1 sur kraft.
-- **Bleu flexo foncé** (#0e1a52) : uniquement le survol des boutons pleins.
+- **Bordeaux** (#6e1a2f) : l'unique encre. Tout le texte sur kraft, les filets, les boutons pleins, les tampons, les aplats de section (provenance, adresse, bandeau du haut, menu mobile, barre d'actions mobile) et le ton sombre des photos imprimées. Contraste 5,5:1 sur kraft.
+- **Bordeaux foncé** (#4d1120) : uniquement le survol des boutons pleins.
 
 ### Neutral
 - **Kraft brut** (#c7a06f) : le fond de page (avec la tuile de fibres `public/textures/kraft.png`), le texte et les boutons « réservés » sur les aplats d'encre, le ton clair des photos imprimées.
@@ -133,7 +133,7 @@ Deux couleurs de surface qui se partagent la page par régions entières, plus l
 - **Impression thermique** (#141414) et **impression atténuée** (#4b4b47) : texte sur étiquette uniquement.
 
 ### Named Rules
-**The One Ink Rule.** Tout ce qui est imprimé sur le sac l'est en bleu flexo. Aucune seconde couleur d'accent, aucun vert « ouvert » ni rouge « erreur ».
+**The One Ink Rule.** Tout ce qui est imprimé sur le sac l'est en bordeaux. Aucune seconde couleur d'accent, aucun vert « ouvert » ni rouge vif « erreur ».
 
 **The Knockout Rule.** Sur un aplat d'encre, le clair est le kraft lui-même (#c7a06f), jamais une crème plus pâle : c'est le papier qui apparaît, pas une nouvelle couleur.
 
@@ -189,7 +189,7 @@ Angles droits partout : boutons, champs, onglets, images imprimées, carte. Seul
 ### Buttons
 Des blocs d'encre rectangulaires, en capitales espacées.
 - **Shape:** angles droits (0 px), hauteur minimale de 52 px.
-- **Primary:** aplat bleu flexo, texte kraft, flèche qui avance de 4 px au survol ; enfoncement de 1 px à l'appui.
+- **Primary:** aplat bordeaux, texte kraft, flèche qui avance de 4 px au survol ; enfoncement de 1 px à l'appui.
 - **Outline:** filet d'encre de 2 px sur kraft ; au survol, il se remplit d'encre.
 - **Knockout / Outline-light:** les mêmes, inversés sur les aplats d'encre (kraft plein, ou filet kraft).
 - **Focus:** contour de 2,5 px dans la couleur du texte, décalé de 3 px.

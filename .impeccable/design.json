@@ -5,8 +5,8 @@
   "extensions": {
     "colorMeta": {
       "kraft": { "role": "neutral", "displayName": "Kraft brut", "canonical": "#c7a06f", "tonalRamp": ["#3b2a14", "#5a4122", "#7a5a33", "#9c7746", "#c7a06f", "#d6b88f", "#e6d2b4", "#f4ead9"] },
-      "ink": { "role": "primary", "displayName": "Bleu flexo", "canonical": "#172870", "tonalRamp": ["#070c24", "#0e1a52", "#172870", "#2a3d8f", "#4658ad", "#7482c8", "#a8b1e0", "#dfe3f5"] },
-      "ink-deep": { "role": "primary", "displayName": "Bleu flexo foncé", "canonical": "#0e1a52", "tonalRamp": ["#04081c", "#0a1238", "#0e1a52", "#1c2b73", "#34469a", "#5c6ebd", "#95a1dc", "#d6dbf2"] },
+      "ink": { "role": "primary", "displayName": "Bordeaux", "canonical": "#6e1a2f", "tonalRamp": ["#1f060c", "#4d1120", "#6e1a2f", "#8a2a42", "#a4475d", "#c07a8a", "#dcb0ba", "#f3e2e6"] },
+      "ink-deep": { "role": "primary", "displayName": "Bordeaux foncé", "canonical": "#4d1120", "tonalRamp": ["#14040a", "#2e0a14", "#4d1120", "#6e1a2f", "#8a2a42", "#b05a70", "#d49aa8", "#efd8de"] },
       "label-paper": { "role": "neutral", "displayName": "Papier d'étiquette", "canonical": "#f4f4f0", "tonalRamp": ["#2a2a27", "#4b4b47", "#6f6f6a", "#95958f", "#bcbcb6", "#dadad4", "#ebebe6", "#f4f4f0"] },
       "label-print": { "role": "neutral", "displayName": "Impression thermique", "canonical": "#141414", "tonalRamp": ["#0a0a0a", "#141414", "#2b2b2b", "#474747", "#666666", "#8a8a8a", "#b3b3b3", "#dedede"] },
       "label-print-soft": { "role": "neutral", "displayName": "Impression atténuée", "canonical": "#4b4b47", "tonalRamp": ["#1c1c1a", "#33332f", "#4b4b47", "#65655f", "#81817a", "#a1a19a", "#c4c4be", "#e6e6e1"] }
@@ -45,7 +45,7 @@
       "refersTo": "button-primary",
       "description": "Action principale : bloc d'encre rectangulaire, flèche qui avance au survol.",
       "html": "<a class=\"ds-btn-ink\" href=\"#\"><span>Nous trouver</span><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></a>",
-      "css": ".ds-btn-ink{display:inline-flex;align-items:center;gap:12px;min-height:52px;padding:0 24px;background:#172870;color:#c7a06f;font:700 0.95rem/1 Archivo,system-ui,sans-serif;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;transition:background-color .2s}.ds-btn-ink svg{transition:transform .3s cubic-bezier(.16,1,.3,1)}.ds-btn-ink:hover{background:#0e1a52}.ds-btn-ink:hover svg{transform:translateX(4px)}.ds-btn-ink:active{transform:translateY(1px)}.ds-btn-ink:focus-visible{outline:2.5px solid #172870;outline-offset:3px}"
+      "css": ".ds-btn-ink{display:inline-flex;align-items:center;gap:12px;min-height:52px;padding:0 24px;background:#6e1a2f;color:#c7a06f;font:700 0.95rem/1 Archivo,system-ui,sans-serif;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;transition:background-color .2s}.ds-btn-ink svg{transition:transform .3s cubic-bezier(.16,1,.3,1)}.ds-btn-ink:hover{background:#4d1120}.ds-btn-ink:hover svg{transform:translateX(4px)}.ds-btn-ink:active{transform:translateY(1px)}.ds-btn-ink:focus-visible{outline:2.5px solid #6e1a2f;outline-offset:3px}"
     },
     {
       "name": "Bouton filet",
@@ -53,7 +53,7 @@
       "refersTo": "button-outline",
       "description": "Action secondaire : filet d'encre de 2px, se remplit au survol.",
       "html": "<a class=\"ds-btn-outline\" href=\"#\">Découvrir la boutique</a>",
-      "css": ".ds-btn-outline{display:inline-flex;align-items:center;min-height:52px;padding:0 24px;border:2px solid #172870;color:#172870;font:700 0.95rem/1 Archivo,system-ui,sans-serif;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;transition:background-color .2s,color .2s}.ds-btn-outline:hover{background:#172870;color:#c7a06f}.ds-btn-outline:focus-visible{outline:2.5px solid #172870;outline-offset:3px}"
+      "css": ".ds-btn-outline{display:inline-flex;align-items:center;min-height:52px;padding:0 24px;border:2px solid #6e1a2f;color:#6e1a2f;font:700 0.95rem/1 Archivo,system-ui,sans-serif;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;transition:background-color .2s,color .2s}.ds-btn-outline:hover{background:#6e1a2f;color:#c7a06f}.ds-btn-outline:focus-visible{outline:2.5px solid #6e1a2f;outline-offset:3px}"
     },
     {
       "name": "Étiquette de balance",
@@ -68,7 +68,7 @@
       "kind": "custom",
       "description": "Liste des rayons à filets épais ; la ligne passe en aplat d'encre au survol.",
       "html": "<a class=\"ds-row\" href=\"#\"><span class=\"ds-row-name\">Tartinables</span><span>Pour l'apéritif ou la tartine du matin.</span><span class=\"ds-row-count\">2 réf.</span></a>",
-      "css": ".ds-row{display:grid;grid-template-columns:1.1fr 1fr auto;align-items:center;gap:24px;padding:20px 12px;border-top:2px solid #172870;border-bottom:2px solid #172870;color:#172870;text-decoration:none;font:400 1rem/1.4 Archivo,sans-serif;transition:background-color .2s,color .2s}.ds-row-name{font:800 3rem/.9 Archivo,sans-serif;font-variation-settings:'wdth' 62;text-transform:uppercase}.ds-row-count{font:400 .875rem 'Red Hat Mono',monospace}.ds-row:hover,.ds-row:focus-visible{background:#172870;color:#c7a06f;outline:none}"
+      "css": ".ds-row{display:grid;grid-template-columns:1.1fr 1fr auto;align-items:center;gap:24px;padding:20px 12px;border-top:2px solid #6e1a2f;border-bottom:2px solid #6e1a2f;color:#6e1a2f;text-decoration:none;font:400 1rem/1.4 Archivo,sans-serif;transition:background-color .2s,color .2s}.ds-row-name{font:800 3rem/.9 Archivo,sans-serif;font-variation-settings:'wdth' 62;text-transform:uppercase}.ds-row-count{font:400 .875rem 'Red Hat Mono',monospace}.ds-row:hover,.ds-row:focus-visible{background:#6e1a2f;color:#c7a06f;outline:none}"
     },
     {
       "name": "Champ de formulaire",
@@ -76,21 +76,21 @@
       "refersTo": "input",
       "description": "Papier d'étiquette, filet d'encre ; l'erreur est un filet épaissi, pas une couleur.",
       "html": "<label class=\"ds-field\"><span>E-mail *</span><input type=\"email\" placeholder=\"\"></label>",
-      "css": ".ds-field{display:block;color:#172870;font:700 .85rem/1 Archivo,sans-serif;letter-spacing:.06em;text-transform:uppercase}.ds-field input{display:block;width:100%;height:52px;margin-top:6px;padding:0 16px;background:#f4f4f0;border:2px solid #172870;border-radius:0;color:#141414;font:400 1rem Archivo,sans-serif;letter-spacing:normal;text-transform:none}.ds-field input:focus-visible{outline:2.5px solid #172870;outline-offset:2px}.ds-field input[aria-invalid=true]{border-width:3.5px}"
+      "css": ".ds-field{display:block;color:#6e1a2f;font:700 .85rem/1 Archivo,sans-serif;letter-spacing:.06em;text-transform:uppercase}.ds-field input{display:block;width:100%;height:52px;margin-top:6px;padding:0 16px;background:#f4f4f0;border:2px solid #6e1a2f;border-radius:0;color:#141414;font:400 1rem Archivo,sans-serif;letter-spacing:normal;text-transform:none}.ds-field input:focus-visible{outline:2.5px solid #6e1a2f;outline-offset:2px}.ds-field input[aria-invalid=true]{border-width:3.5px}"
     },
     {
       "name": "Onglet de filtre",
       "kind": "chip",
       "description": "Filtres du catalogue : rectangle à filet, rempli d'encre quand actif.",
       "html": "<button class=\"ds-tab\" aria-pressed=\"true\">Tout</button><button class=\"ds-tab\" aria-pressed=\"false\">Pains &amp; viennoiseries <span>4</span></button>",
-      "css": ".ds-tab{min-height:44px;padding:0 14px;margin-right:6px;border:2px solid #172870;background:transparent;color:#172870;font:700 .85rem/1 Archivo,sans-serif;letter-spacing:.05em;text-transform:uppercase;cursor:pointer;transition:background-color .15s}.ds-tab span{font:400 .8em 'Red Hat Mono',monospace}.ds-tab:hover{background:rgb(244 244 240/.5)}.ds-tab[aria-pressed=true]{background:#172870;color:#c7a06f}.ds-tab:focus-visible{outline:2.5px solid #172870;outline-offset:3px}"
+      "css": ".ds-tab{min-height:44px;padding:0 14px;margin-right:6px;border:2px solid #6e1a2f;background:transparent;color:#6e1a2f;font:700 .85rem/1 Archivo,sans-serif;letter-spacing:.05em;text-transform:uppercase;cursor:pointer;transition:background-color .15s}.ds-tab span{font:400 .8em 'Red Hat Mono',monospace}.ds-tab:hover{background:rgb(244 244 240/.5)}.ds-tab[aria-pressed=true]{background:#6e1a2f;color:#c7a06f}.ds-tab:focus-visible{outline:2.5px solid #6e1a2f;outline-offset:3px}"
     },
     {
       "name": "Bandeau de navigation",
       "kind": "nav",
       "description": "Bandeau d'encre du haut, bouche du sac dentelée en bas, bouton kraft.",
       "html": "<header class=\"ds-nav\"><span class=\"ds-logo\"><b>Les Produits</b><b>de la Vie</b></span><nav><a href=\"#\" aria-current=\"page\">Accueil</a><a href=\"#\">Nos produits</a></nav><a class=\"ds-nav-cta\" href=\"#\">Nous trouver</a></header>",
-      "css": ".ds-nav{position:relative;display:flex;align-items:center;justify-content:space-between;gap:24px;height:72px;padding:0 32px 6px;background:#172870;color:#c7a06f;font:700 .95rem Archivo,sans-serif;letter-spacing:.06em;text-transform:uppercase}.ds-nav::after{content:'';position:absolute;left:0;right:0;bottom:-1px;height:10px;background:linear-gradient(135deg,transparent 50%,#c7a06f 50%) 0 0/14px 10px repeat-x,linear-gradient(225deg,transparent 50%,#c7a06f 50%) 0 0/14px 10px repeat-x}.ds-logo{display:inline-flex;flex-direction:column;padding:4px 8px 2px;border:2px solid currentColor;font:800 1rem/.86 Archivo,sans-serif;font-variation-settings:'wdth' 62}.ds-nav nav{display:flex;gap:32px}.ds-nav nav a{color:inherit;text-decoration:none;text-underline-offset:6px;text-decoration-thickness:2px}.ds-nav nav a:hover,.ds-nav nav a[aria-current=page]{text-decoration-line:underline}.ds-nav-cta{display:inline-flex;align-items:center;height:44px;padding:0 20px;background:#c7a06f;color:#172870;text-decoration:none;font-size:.875rem}.ds-nav-cta:hover{background:#f4f4f0}"
+      "css": ".ds-nav{position:relative;display:flex;align-items:center;justify-content:space-between;gap:24px;height:72px;padding:0 32px 6px;background:#6e1a2f;color:#c7a06f;font:700 .95rem Archivo,sans-serif;letter-spacing:.06em;text-transform:uppercase}.ds-nav::after{content:'';position:absolute;left:0;right:0;bottom:-1px;height:10px;background:linear-gradient(135deg,transparent 50%,#c7a06f 50%) 0 0/14px 10px repeat-x,linear-gradient(225deg,transparent 50%,#c7a06f 50%) 0 0/14px 10px repeat-x}.ds-logo{display:inline-flex;flex-direction:column;padding:4px 8px 2px;border:2px solid currentColor;font:800 1rem/.86 Archivo,sans-serif;font-variation-settings:'wdth' 62}.ds-nav nav{display:flex;gap:32px}.ds-nav nav a{color:inherit;text-decoration:none;text-underline-offset:6px;text-decoration-thickness:2px}.ds-nav nav a:hover,.ds-nav nav a[aria-current=page]{text-decoration-line:underline}.ds-nav-cta{display:inline-flex;align-items:center;height:44px;padding:0 20px;background:#c7a06f;color:#6e1a2f;text-decoration:none;font-size:.875rem}.ds-nav-cta:hover{background:#f4f4f0}"
     }
   ],
   "narrative": {

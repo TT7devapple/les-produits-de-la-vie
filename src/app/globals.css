@@ -2,13 +2,13 @@
 
 /* ------------------------------------------------------------------
    Les Produits de la Vie — le sac kraft et l'étiquette de balance.
-   Un fond : le kraft. Une encre : le bleu flexo. Un support de données :
+   Un fond : le kraft. Une encre : le bordeaux. Un support de données :
    l'étiquette thermique blanche.
    ------------------------------------------------------------------ */
 @theme {
   --color-kraft: #c7a06f;
-  --color-ink: #172870;
-  --color-ink-deep: #0e1a52;
+  --color-ink: #6e1a2f;
+  --color-ink-deep: #4d1120;
   --color-label: #f4f4f0;
   --color-print: #141414;
   --color-print-soft: #4b4b47;

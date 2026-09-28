@@ -52,7 +52,7 @@ export function ContactForm() {
             defaultValue={values?.subject || "Question sur un produit"}
             className={cn(
               fieldClass,
-              "h-13 appearance-none border-2 border-ink bg-[url('data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2212%22%20height=%2212%22%20fill=%22none%22%20stroke=%22%23172870%22%20stroke-width=%222%22%3E%3Cpath%20d=%22m2%204%204%204%204-4%22/%3E%3C/svg%3E')] bg-[length:12px] bg-[right_1rem_center] bg-no-repeat",
+              "h-13 appearance-none border-2 border-ink bg-[url('data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2212%22%20height=%2212%22%20fill=%22none%22%20stroke=%22%236e1a2f%22%20stroke-width=%222%22%3E%3Cpath%20d=%22m2%204%204%204%204-4%22/%3E%3C/svg%3E')] bg-[length:12px] bg-[right_1rem_center] bg-no-repeat",
             )}
           >
             <option>Question sur un produit</option>

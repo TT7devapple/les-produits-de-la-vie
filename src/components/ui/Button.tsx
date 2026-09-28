@@ -6,8 +6,8 @@ import { cn } from "@/lib/utils";
  * Bouton-lien : un bloc d'encre imprimé, angles droits.
  * - ink       : aplat d'encre sur kraft (action principale)
  * - outline   : filet d'encre sur kraft (action secondaire)
- * - knockout  : kraft réservé sur un aplat d'encre (action principale sur fond bleu)
- * - outline-light : filet clair sur fond bleu
+ * - knockout  : kraft réservé sur un aplat d'encre (action principale sur fond bordeaux)
+ * - outline-light : filet clair sur fond bordeaux
  */
 type Variant = "ink" | "outline" | "knockout" | "outline-light";
 

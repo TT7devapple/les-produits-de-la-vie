@@ -3,7 +3,7 @@ import type { SiteImage } from "@/types";
 import { cn } from "@/lib/utils";
 
 /**
- * Photo « imprimée » sur le sac : bichromie encre bleue / kraft clair.
+ * Photo « imprimée » sur le sac : bichromie encre bordeaux / kraft clair.
  * Donne une unité aux photos d'ambiance, quelle que soit leur source.
  * Les photos de produits, elles, restent en couleur (sur les étiquettes).
  */
